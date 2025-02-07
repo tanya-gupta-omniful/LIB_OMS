@@ -2,6 +2,8 @@ package main
 
 import (
 	appinit "OMS/init"
+	psqs "OMS/sqs"
+	sqs "OMS/utils/sqs"
 	"context"
 	"fmt"
 	"time"
@@ -25,6 +27,10 @@ func main(){
 	}
 	//initoialise connection
     appinit.Initialize(ctx)
+
+	psqs.IntiializeSqs(ctx)
+
+	sqs.StartConsumerWorker(ctx)
 	// Initialize Server
 	runHttpServer(ctx)
 }

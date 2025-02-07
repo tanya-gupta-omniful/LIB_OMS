@@ -4,3 +4,10 @@ mongo:
   uri: "mongodb://localhost:27017"
   database: "oms"
   collection: "orders"
+sqs:
+  name: "sqs_t"
+  workerCount: 1
+  region: "ap-south-1"
+  endpoint: "https://sqs.ap-south-1.amazonaws.com/025066273041/sqs"
+  account: "025066273041"
+  concurrencyPerWorker: 1
